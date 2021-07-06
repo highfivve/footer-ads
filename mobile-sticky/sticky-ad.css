@@ -1,0 +1,53 @@
+.h5-sticky-ad {
+  background-color: #f3f3f3;
+  border: none;
+  bottom: 0;
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
+  height: 59px;
+  left: 0;
+  padding: 5px;
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  z-index: 900; /* set this to a value that enables the sticky ad to overlap any other elements on the page. */
+}
+
+.h5-sticky-ad-close {
+  background-color: #f3f3f3;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='13' height='13' viewBox='341 8 13 13' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%234F4F4F' d='M354 9.31L352.69 8l-5.19 5.19L342.31 8 341 9.31l5.19 5.19-5.19 5.19 1.31 1.31 5.19-5.19 5.19 5.19 1.31-1.31-5.19-5.19z' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-position: 9px;
+  background-repeat: no-repeat;
+  background-size: 13px 13px;
+  border: none;
+  border-top-left-radius: 12px;
+  box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
+  height: 28px;
+  padding: 6px;
+  position: absolute;
+  right: 0;
+  top: -28px;
+  width: 28px;
+}
+
+.h5-sticky-ad-close::before {
+  bottom: 0;
+  content: "";
+  left: -20px;
+  position: absolute;
+  right: 0;
+  top: -20px;
+}
+
+.u-visible-desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .u-hidden-desktop {
+    display: none;
+  }
+
+  .u-visible-desktop {
+    display: block;
+  }
+}

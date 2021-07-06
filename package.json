@@ -1,0 +1,14 @@
+{
+  "name": "footer-ads",
+  "author": {
+    "name": "Highfivve team",
+    "email": "team@highfivve.com",
+    "url": "https://highfivve.com"
+  },
+  "license": "MIT",
+  "version": "1.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^2.3.2"
+  }
+}

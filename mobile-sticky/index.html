@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Highfivve Mobile Sticky Ad Sample Implementation</title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/styles/stackoverflow-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="sticky-ad.css" />
+    <script type="module">
+      import { initAdSticky } from "./sticky-ad.mjs";
+      import { setupAd } from "../util/setup.mjs";
+      import { includeCodeSamples } from "../util/code-samples.mjs";
+
+      setupAd(
+        [
+          [320, 50],
+          [300, 50],
+        ],
+        "h5_sticky_ad",
+        initAdSticky
+      );
+
+      includeCodeSamples([
+        { js: "./sticky-ad.mjs" },
+        { css: "./sticky-ad.css" },
+      ]);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <a class="logo d-block my-3"
+        ><img
+          src="../img/highfivve-logo.png"
+          width="366"
+          height="92"
+          alt="Highfivve logo"
+      /></a>
+      <h1>Sample Mobile Sticky Ad Implementation</h1>
+      <div class="alert alert-warning u-visible-desktop">
+        <strong>Notice:</strong> The mobile sticky ad should only be visible on
+        mobile.
+      </div>
+      <p>
+        The mobile sticky ad is a format that is always visible, but the close
+        button has some dynamic functionality.
+      </p>
+      <button class="btn btn-primary mb-3">Trigger the Sticky Ad</button>
+      <section>
+        <h2>JavaScript</h2>
+        <pre><code class="language-javascript" data-ref="js"></code></pre>
+      </section>
+      <section>
+        <h2>CSS</h2>
+        <pre><code class="language-css" data-ref="css"></code></pre>
+      </section>
+    </div>
+    <div class="h5-sticky-ad u-hidden-desktop" data-ref="sticky-ad">
+      <div id="h5_sticky_ad" class="h5-sticky-ad-container"></div>
+      <button
+        class="h5-sticky-ad-close"
+        data-ref="sticky-ad-close"
+        aria-label="Anzeige entfernen"
+      ></button>
+    </div>
+  </body>
+</html>
