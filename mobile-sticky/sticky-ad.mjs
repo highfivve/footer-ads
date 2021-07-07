@@ -17,8 +17,8 @@ export const initAdSticky = () => {
         adSticky.style.setProperty("display", "none");
 
         // destroy the slot so it doesn't get reloaded or refreshed by accident
-        window.googletag.cmd.push((googletag) => {
-          const slot = googletag
+        window.googletag.cmd.push(() => {
+          const slot = window.googletag
             .pubads()
             .getSlots()
             .find(
