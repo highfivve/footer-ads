@@ -1,20 +1,5 @@
-let currentListener = undefined;
-
 const setupGoogletagCmd = () => ({
-  push: (fn) =>
-    fn({
-      pubads: () => ({
-        addEventListener: (name, listener) => {
-          currentListener = listener;
-        },
-        getSlots: () => ({
-          find: (fn) => {
-            fn({ slot: { getAdUnitPath: () => undefined } });
-            return undefined;
-          },
-        }),
-      }),
-    }),
+  push: (fn) => fn(),
 });
 
 const sampleImage = (width, height) => {
@@ -27,10 +12,21 @@ const sampleImage = (width, height) => {
 
 export const setupAd = (sizes, domId, setupListener) => {
   window.onload = () => {
-    currentListener = undefined;
+    let currentListener = undefined;
 
     window.googletag = {
       cmd: setupGoogletagCmd(),
+      pubads: () => ({
+        addEventListener: (name, listener) => {
+          currentListener = listener;
+        },
+        getSlots: () => ({
+          find: (fn) => {
+            fn({ getAdUnitPath: () => undefined });
+            return undefined;
+          },
+        }),
+      }),
       destroySlots: () => undefined,
     };
 

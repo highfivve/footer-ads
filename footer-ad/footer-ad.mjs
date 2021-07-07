@@ -76,7 +76,9 @@ const renderFooterAd = (event) => {
 
 export const setupFooterAdListener = () => {
   window.googletag = window.googletag || { cmd: [] };
-  window.googletag.cmd.push((googletag) =>
-    googletag.pubads().addEventListener("slotRenderEnded", renderFooterAd)
+  window.googletag.cmd.push(() =>
+    window.googletag
+      .pubads()
+      .addEventListener("slotRenderEnded", renderFooterAd)
   );
 };
