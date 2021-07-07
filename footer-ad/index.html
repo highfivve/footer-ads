@@ -36,10 +36,11 @@
         setupFooterAdListener
       );
 
-      includeCodeSamples([
-        { js: "./footer-ad.mjs" },
-        { css: "./footer-ad.css" },
-      ]);
+      includeCodeSamples({
+        js: "./footer-ad.mjs",
+        css: "./footer-ad.css",
+        html: "[data-ref=h5-footer-ad-container]",
+      });
     </script>
     <link rel="stylesheet" href="../util/highfivve.css" />
   </head>
@@ -59,6 +60,10 @@
         been confirmed for the slot via googletag.
       </p>
       <button class="btn btn-primary mb-3">Trigger the Footer Ad</button>
+      <section>
+        <h2>HTML</h2>
+        <pre><code class="language-html" data-ref="html"></code></pre>
+      </section>
       <section>
         <h2>JavaScript</h2>
         <pre><code class="language-javascript" data-ref="js"></code></pre>

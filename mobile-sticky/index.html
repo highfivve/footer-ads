@@ -35,10 +35,11 @@
         initAdSticky
       );
 
-      includeCodeSamples([
-        { js: "./sticky-ad.mjs" },
-        { css: "./sticky-ad.css" },
-      ]);
+      includeCodeSamples({
+        js: "./sticky-ad.mjs",
+        css: "./sticky-ad.css",
+        html: "[data-ref=sticky-ad]",
+      });
     </script>
     <link rel="stylesheet" href="../util/highfivve.css" />
   </head>
@@ -62,6 +63,10 @@
         button has some dynamic functionality.
       </p>
       <button class="btn btn-primary mb-3">Trigger the Sticky Ad</button>
+      <section>
+        <h2>HTML</h2>
+        <pre><code class="language-html" data-ref="html"></code></pre>
+      </section>
       <section>
         <h2>JavaScript</h2>
         <pre><code class="language-javascript" data-ref="js"></code></pre>
