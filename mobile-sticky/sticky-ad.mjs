@@ -22,7 +22,7 @@ export const initAdSticky = () => {
             .pubads()
             .getSlots()
             .find(
-              (slot) => slot.getAdUnitPath() === "/12345/highfivve/h5_stickyad"
+              (slot) => slot.getAdUnitPath().startsWith("/12345/highfivve/h5_stickyad")
             );
 
           // there are cases where the ad slot is not there. This may be the case when
