@@ -9,6 +9,9 @@ export const initAdSticky = () => {
     "[data-ref=sticky-ad-close]"
   );
 
+  // TODO change this value with the one on your documentation page
+  const mobileStickyAdUnitPath = "/12345/highfivve/h5_stickyad"
+
   if (adSticky && closeButton) {
     closeButton.addEventListener(
       "click",
@@ -22,7 +25,7 @@ export const initAdSticky = () => {
             .pubads()
             .getSlots()
             .find(
-              (slot) => slot.getAdUnitPath().startsWith("/12345/highfivve/h5_stickyad")
+              (slot) => slot.getAdUnitPath().startsWith(mobileStickyAdUnitPath)
             );
 
           // there are cases where the ad slot is not there. This may be the case when
