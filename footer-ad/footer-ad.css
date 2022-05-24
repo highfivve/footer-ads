@@ -5,6 +5,8 @@
   max-width: 800px;
   overflow: visible;
   position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
   z-index: 900; /* set this to a value that enables the footer ad to overlap any other elements on the page. */
 }
 
