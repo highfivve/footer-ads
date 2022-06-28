@@ -25,6 +25,17 @@
   top: -24px;
   width: 60px;
 }
+
+@media (min-width: 1000px) {
+  .h5-footer-ad-close {
+    border-radius: 0 12px 12px 0;
+    height: 60px;
+    width: 24px;
+    right: -24px;
+    top: 0
+  }
+}
+
 .h5-footer-ad-close:hover {
   background-color: white;
 }
