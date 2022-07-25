@@ -3,7 +3,8 @@
   border: none;
   bottom: 0;
   box-shadow: 0 -1px 1px 0 rgba(0, 0, 0, 0.2);
-  height: 159px;
+  min-height: 59px;
+  height: auto;
   left: 0;
   padding: 5px;
   position: fixed;
