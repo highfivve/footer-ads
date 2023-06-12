@@ -1,0 +1,97 @@
+:root {
+  --navbar-height: 48px;
+  /** set this to none if you don't want a close button */
+  --header-ad-close-button: block;
+  --header-ad-bg: #fff;
+   /** depending on your ad layout this may range from 50px to 250px */
+  --header-ad-height: 100px;
+  --header-ad-border: 1px solid rgb(243, 244, 246);
+  --header-ad-shadow: 0 0 #0000, 0 0 #0000,
+    0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+@media (max-height: 767px) {
+  main {
+    padding-top: calc(var(--navbar-height) + var(--header-ad-height) + 30px);
+  }
+}
+
+.sticky-nav {
+  align-items: center;
+  background-color: rgb(96, 165, 250);
+  position: fixed;
+  top: 0;
+  height: var(--navbar-height);
+  width: 100%;
+  display: flex;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  z-index: 20;
+}
+
+.header-ad {
+  background-color: var(--header-ad-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--header-ad-height);
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  .header-ad {
+    border-bottom: var(--header-ad-border);
+    box-shadow: var(--header-ad-shadow);
+    position: fixed;
+    top: var(--navbar-height);
+    transition: transform 800ms ease;
+    transform: translateY(0);
+    z-index: 10;
+  }
+
+  .header-ad--fadeOut {
+    /** this is the hiding animiation */
+    transform: translateY(
+      calc(-1 * (var(--navbar-height) + var(--header-ad-height)))
+    );
+  }
+}
+
+@media (min-width: 768px) {
+  .header-ad {
+    min-height: 250px;
+  }
+  .header-ad--button {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-ad--button {
+    background-color: var(--header-ad-bg);
+    bottom: -25px;
+    border-bottom: var(--header-ad-border);
+    border-right: var(--header-ad-border);
+    box-shadow: var(--header-ad-shadow);
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-size: 0.875rem;
+    display: var(--header-ad-close-button);
+    position: fixed;
+    left: 0;
+    padding: 0.125rem 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-ad {
+    padding-top: var(--navbar-height);
+  }
+}
+
+#h5v_header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
