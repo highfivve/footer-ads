@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Highfivve Mobile Sticky Ad Sample Implementation</title>
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/styles/stackoverflow-dark.min.css"
+    />
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.0.1/build/highlight.min.js"></script>
+    <link rel="stylesheet" href="sticky-ad.css" />
+    <script type="module">
+      import { initAdSticky } from "./sticky-ad.mjs";
+      import { setupAd } from "../util/setup.mjs";
+      import { includeCodeSamples } from "../util/code-samples.mjs";
+
+      initAdSticky();
+      includeCodeSamples({
+        css: "./sticky-ad.css",
+        html: "[data-ref=header-ad]",
+      });
+    </script>
+    <link rel="stylesheet" href="../util/highfivve.css" />
+  </head>
+  <body class="relative pb-12">
+    <header class="sticky-nav">this is a sticky navbar</header>
+
+    <!-- sticky header ad -->
+    <div class="header-ad" data-ref="header-ad">
+      <div id="h5v_header">HEADER AD SLOT</div>
+      <button class="header-ad--button" data-ref="header-ad-close-button">
+        Close
+      </button>
+    </div>
+    <!-- -----  -->
+
+    <main class="px-3 pb-3 md:pt-2 mt-3">
+        <img
+          src="../img/highfivve-logo.png"
+          width="366"
+          height="92"
+          alt="Highfivve logo"
+          class="mb-4">
+      <h1 class="text-2xl my-4">Sample Mobile Sticky Header Ad Implementation</h1>
+      <p class="my-2">
+        The header ad has a few configuration parameters that you can tweak.
+        <ul class="list-disc pl-8">
+          <li class="mb-1">CSS variables: The <code>sticky-ad.css</code> file contains some variables that may need adjustments according to your ad layout. The <code>--header-ad-height</code> may be 250px or only 50px. The <code>--navbar-height</code> may differ for your layout.</li>
+          <li class="mb-1">
+            The <code>--header-ad-close-button</code> can be set to <code>none</code> if you don't want a close button or you can remove the <code>button</code> tag entirely.
+          </li>
+          <li class="mb-1">
+            The <code>fadeOutClassname</code>. By default we use <code>header-ad--fadeOut</code>. This class gets applied, when the slot should fade out.
+          </li>
+          <li class="mb-1">
+            The <code>selector</code> for the DOM node that should be observed for visibility, which triggers the header ad fade out. We recommend using the first content position. You can however turn this feature off and the sticky header will always be visible. We only recommend this if you have no mobile sticky ad on your page.
+          </li>
+        </ul>
+      </p>
+      <p class="my-2">
+         The sticky implementation in this example is only for mobile.
+      </p>
+      <section class="mb-4">
+        <h2 class="text-xl">HTML</h2>
+        <pre><code class="language-html" data-ref="html"></code></pre>
+      </section>
+      <section class="mb-4">
+        <h2 class="text-xl">CSS</h2>
+        <pre><code class="language-css" data-ref="css"></code></pre>
+      </section>
+
+      <article>
+        <p class="mb-4">
+          Similar to the
+          <a
+            class="text-blue-700 underline"
+            href="https://googleads.github.io/google-publisher-tag-samples/display-anchor-ad/js/demo.html"
+            >Google Anchor Ad Top</a
+          >
+          The general idea is that an <code>Intersection Observer</code> watches for a certain element, usually the first content ad slot, to be visible and then adds a fade-out CSS class, which transitions the slot out of viewport. In order to make this work the space needs to be received. This example uses padding top to achieve this. The ad slot it self floats on top of this empty space.
+        </p>
+
+        <div
+          id="h5v_content_1"
+          class="bg-gray-300 flex justify-center items-center w-full h-[300px] mb-4"
+        >
+          AD SLOT
+        </div>
+
+        <p class="mb-4">
+          Nam liber tempor cum soluta nobis eleifend option congue nihil
+          imperdiet doming id quod mazim placerat facer
+        </p>
+
+        <p class="mb-4">
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+          suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+          vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+          consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+          accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+          delenit augue duis dolore te feugait nulla facilisi. Duis autem vel
+          eum iriure dolor in hendrerit in vulputate velit esse molestie
+          consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+          accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+          delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor
+          sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
+          tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>
+
+        <p class="mb-4">
+          Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
+          suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
+          vel eum iriure dolor in hendrerit in vulputate velit esse molestie
+          consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
+          accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
+          delenit augue duis dolore te feugait nulla facilisi.
+        </p>
+
+        <div
+          id="h5v_content_2"
+          class="bg-gray-300 flex justify-center items-center w-full h-[300px] mb-4"
+        >
+          AD SLOT
+        </div>
+
+        <p class="mb-4">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+          sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+          rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+          ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+          sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+          dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
+          et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
+          takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
+          amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+          kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+          amet.
+        </p>
+      </article>
+
+    </main>
+  </body>
+</html>
