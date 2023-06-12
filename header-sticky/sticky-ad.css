@@ -72,6 +72,7 @@
     bottom: -25px;
     border-bottom: var(--header-ad-border);
     border-right: var(--header-ad-border);
+    border-width: inherit;
     box-shadow: var(--header-ad-shadow);
     border-radius: 0 0 0.5rem 0.5rem;
     font-size: 0.875rem;
