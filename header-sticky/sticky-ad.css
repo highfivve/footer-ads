@@ -10,26 +10,22 @@
     0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
+/** change the mobile/desktop breakpoint according to your style */
 @media (max-height: 767px) {
   main {
+    /** this reserves enough "space" for the sticky ad.
+     *
+     * The padding represents the whitespace where the sticky ad floats on top. 
+     * It's caluclated based on the height of the navbar, the maximum height of the ad and some extra
+     * padding (30px in this case)
+     */
     padding-top: calc(var(--navbar-height) + var(--header-ad-height) + 30px);
   }
 }
 
-.sticky-nav {
-  align-items: center;
-  background-color: rgb(96, 165, 250);
-  position: fixed;
-  top: 0;
-  height: var(--navbar-height);
-  width: 100%;
-  display: flex;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  z-index: 20;
-}
-
+/** styles the container for the actual ad. You may name this CSS class as you wish */
 .header-ad {
+  /** background is required for sticky ads */
   background-color: var(--header-ad-bg);
   display: flex;
   justify-content: center;
@@ -39,9 +35,13 @@
 }
 
 @media (max-width: 767px) {
+
   .header-ad {
+    /** you may change the style according to your needs */
     border-bottom: var(--header-ad-border);
     box-shadow: var(--header-ad-shadow);
+
+    /** all properties below are for the sticky behaviour */
     position: fixed;
     top: var(--navbar-height);
     transition: transform 800ms ease;
@@ -49,24 +49,19 @@
     z-index: 10;
   }
 
+  /** if this classname doesn't fit your css rules, you can propose a separate name, which
+   * must be configured in your ad tag.
+   */
   .header-ad--fadeOut {
     /** this is the hiding animiation */
     transform: translateY(
       calc(-1 * (var(--navbar-height) + var(--header-ad-height)))
     );
   }
-}
 
-@media (min-width: 768px) {
-  .header-ad {
-    min-height: 250px;
-  }
-  .header-ad--button {
-    display: none;
-  }
-}
-
-@media (max-width: 767px) {
+  /** this an example on how the close button may look like.
+   * if you don't want a close button, this is optional.
+   */
   .header-ad--button {
     background-color: var(--header-ad-bg);
     bottom: -25px;
@@ -83,11 +78,18 @@
   }
 }
 
+/** on desktop the ad is not sticky and placed in the regular layout flow */
 @media (min-width: 768px) {
   .header-ad {
+    min-height: 250px;
     padding-top: var(--navbar-height);
   }
+  .header-ad--button {
+    display: none;
+  }
 }
+
+/** website styling  */
 
 #h5v_header {
   align-items: center;
@@ -95,4 +97,17 @@
   justify-content: center;
   height: 100%;
   width: 100%;
+}
+
+.sticky-nav {
+  align-items: center;
+  background-color: rgb(96, 165, 250);
+  position: fixed;
+  top: 0;
+  height: var(--navbar-height);
+  width: 100%;
+  display: flex;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  z-index: 20;
 }
