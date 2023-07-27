@@ -55,7 +55,7 @@
   .header-ad--fadeOut {
     /** this is the hiding animiation */
     transform: translateY(
-      calc(-1 * (var(--navbar-height) + var(--header-ad-height)))
+      calc(-1 * (var(--navbar-height) + var(--header-ad-height) + 50px))
     );
   }
 
