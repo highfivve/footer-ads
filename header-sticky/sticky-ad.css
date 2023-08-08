@@ -30,7 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: var(--header-ad-height);
+  min-height: var(--header-ad-height);
   width: 100%;
 }
 
