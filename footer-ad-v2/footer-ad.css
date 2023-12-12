@@ -1,0 +1,95 @@
+/* Choose one of the following designs */
+
+/* Design 1 */
+
+.design-1.h5v-sticky-ad-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+  padding: 0.5rem 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease; /* optional, or can be altered */
+}
+
+.design-1.h5v-sticky-ad-close-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #f0f0f0; /* Match the container's background color */
+  border: none;
+  padding: 0.1rem 1rem;
+  cursor: pointer;
+  border-top-left-radius: 0.8rem;
+  transform: translateY(-100%); /* Above the footerAd container */
+  transition: transform 0.3s ease; /* Add animation to transform property */
+}
+
+/* Design 2 */
+
+.design-2.h5v-sticky-ad-container {
+  position: fixed;
+  min-height: 150px; /* should be the max ad height */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  border-radius: 10px 10px 0 0;
+}
+
+.design-2#h5v-sticky-ad-close-button {
+  position: fixed;
+  transform: translateY(-100%); /* Move button just outside the viewport */
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: top 0.3s ease;
+}
+
+.design-2#arrow-down {
+  display: none;
+}
+
+/* Design 3 */
+
+.design-3.h5v-sticky-ad-container {
+  position: fixed;
+  display: flex;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  color: #fff;
+  padding: 2rem 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+  border-radius: 10px 10px 0 0;
+  font-family: Arial, sans-serif;
+}
+
+.design-3#h5v-sticky-ad-close-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #ff6347;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
+.design-3#h5v-sticky-ad-close-button:hover {
+  background-color: #e74c3c; /* Darker shade on hover */
+}
