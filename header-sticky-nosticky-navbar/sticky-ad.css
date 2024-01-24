@@ -1,0 +1,119 @@
+:root {
+  --navbar-height: 48px;
+  /** set this to none if you don't want a close button */
+  --header-ad-close-button: block;
+  --header-ad-bg: #fff;
+   /** depending on your ad layout this may range from 50px to 250px */
+  --header-ad-height: 100px;
+  --header-ad-border: 1px solid rgb(243, 244, 246);
+  --header-ad-shadow: 0 0 #0000, 0 0 #0000,
+    0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/** change the mobile/desktop breakpoint according to your style */
+@media (max-height: 767px) {
+  main {
+    /** this reserves enough "space" for the sticky ad.
+     *
+     * The padding represents the whitespace where the sticky ad floats on top. 
+     * It's caluclated based on the height of the navbar, the maximum height of the ad and some extra
+     * padding (30px in this case)
+     */
+    padding-top: calc(var(--navbar-height) + var(--header-ad-height) + 30px);
+  }
+}
+
+/** styles the container for the actual ad. You may name this CSS class as you wish */
+.header-ad {
+  /** background is required for sticky ads */
+  background-color: var(--header-ad-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: var(--header-ad-height);
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+
+  .header-ad {
+    /** you may change the style according to your needs */
+    border-bottom: var(--header-ad-border);
+    box-shadow: var(--header-ad-shadow);
+
+    /** all properties below are for the sticky behaviour */
+    position: fixed;
+    top: var(--navbar-height);
+    transition: transform 800ms ease;
+    transition: top 300ms ease;
+    transform: translateY(0);
+    z-index: 10;
+  }
+
+  /** if this classname doesn't fit your css rules, you can propose a separate name, which
+   * must be configured in your ad tag.
+   */
+  .header-ad--fadeOut {
+    /** this is the hiding animiation */
+    transform: translateY(
+      calc(-1 * (var(--navbar-height) + var(--header-ad-height) + 50px))
+    );
+  }
+
+  /**
+    * this class is added to the ad container when the navbar is hidden.
+    * It's required to prevent the ad from overlapping the content.
+    */
+  .header-ad--navbarHidden {
+    top: 0;
+  }
+
+  /** this an example on how the close button may look like.
+   * if you don't want a close button, this is optional.
+   */
+  .header-ad--button {
+    background-color: var(--header-ad-bg);
+    bottom: -25px;
+    border-bottom: var(--header-ad-border);
+    border-right: var(--header-ad-border);
+    border-width: inherit;
+    box-shadow: var(--header-ad-shadow);
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-size: 0.875rem;
+    display: var(--header-ad-close-button);
+    position: fixed;
+    left: 0;
+    padding: 0.125rem 1rem;
+  }
+}
+
+/** on desktop the ad is not sticky and placed in the regular layout flow */
+@media (min-width: 768px) {
+  .header-ad {
+    min-height: 250px;
+    padding-top: var(--navbar-height);
+  }
+  .header-ad--button {
+    display: none;
+  }
+}
+
+/** website styling  */
+
+#h5v_header {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  align-items: center;
+  background-color: rgb(96, 165, 250);
+  height: var(--navbar-height);
+  width: 100%;
+  display: flex;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
