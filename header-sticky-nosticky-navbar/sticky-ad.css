@@ -44,8 +44,7 @@
     /** all properties below are for the sticky behaviour */
     position: fixed;
     top: var(--navbar-height);
-    transition: transform 800ms ease;
-    transition: top 300ms ease;
+    transition: transform 800ms ease, top 300ms ease;
     transform: translateY(0);
     z-index: 10;
   }
