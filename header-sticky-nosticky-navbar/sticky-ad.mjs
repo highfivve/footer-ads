@@ -6,8 +6,9 @@
 export const initAdSticky = () => {
   const navbarSelector = "header";
   const navbar = document.querySelector(navbarSelector);
-  const targetSelector = "#h5v_content_1";
-  const target = document.querySelector(targetSelector);
+  const targetSelector = "#h5v_content_1, #h5v_content_2";
+  const targets = document.querySelectorAll(targetSelector);
+  const target = targets.length > 0 ? targets.item(0) : null;
 
   const fadeOutClass = "header-ad--fadeOut";
   const navbarhiddenClass = "header-ad--navbarHidden";
@@ -15,42 +16,31 @@ export const initAdSticky = () => {
 
   const observer = new IntersectionObserver(
     (entries) => {
-      const entry = entries[0];
-      console.log(entry);
+      entries.forEach((entry) => {
+        // this is the fade out target
+        if (entry.target === target) {
+          console.log('target', entry.target);
+          if (
+            // user scrolls down
+            entry.isIntersecting ||
+            // user starts below observed DOM
+            (!entry.isIntersecting && entry.boundingClientRect.y < 0)
+          ) {
+            headerAd.classList.add(fadeOutClass);
+          } else if (entry.boundingClientRect.y >= 0) {
+            headerAd.classList.remove(fadeOutClass);
+          }
 
-      // this is the fade out target
-      if (entry.target === target) {
-        if (
-          // user scrolls down
-          entry.isIntersecting ||
-          // user starts below observed DOM
-          (!entry.isIntersecting && entry.boundingClientRect.y < 0)
-        ) {
-          headerAd.classList.add(fadeOutClass);
-        } else if (entry.boundingClientRect.y >= 0) {
-          headerAd.classList.remove(fadeOutClass);
+        } else if(entry.target === navbar) {
+          console.log('navbar', entry.target);
+          if(entry.isIntersecting) {
+            headerAd.classList.remove(navbarhiddenClass);
+          } else {
+            headerAd.classList.add(navbarhiddenClass);
+          }
         }
-
-      } else if(entry.target === navbar) {
-        console.log('navbar', entry.target);
-        if(entry.isIntersecting) {
-          headerAd.classList.remove(navbarhiddenClass);
-        } else {
-          headerAd.classList.add(navbarhiddenClass);
-        }
-        // if (
-        //   // user scrolls down
-        //   entry.isIntersecting ||
-        //   // user starts below observed DOM
-        //   (!entry.isIntersecting && entry.boundingClientRect.y < 0)
-        // ) {
-        //   headerAd.classList.add(navbarhiddenClass);
-        // } else if (entry.boundingClientRect.y >= 0) {
-        //   headerAd.classList.remove(navbarhiddenClass);
-        // }
-
-      }
-    },
+        });
+      },
     {
       rootMargin: "0px",
     }
