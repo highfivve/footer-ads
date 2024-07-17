@@ -45,7 +45,7 @@
   border-radius: 10px 10px 0 0;
 }
 
-.design-2#h5v-sticky-ad-close-button {
+.design-2.h5v-sticky-ad-close-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -55,10 +55,6 @@
   padding: 5px 10px;
   cursor: pointer;
   transform: translateY(-100%); /* Move button just outside the viewport */
-}
-
-.design-2#arrow-down {
-  display: none;
 }
 
 /* Design 3 */
@@ -80,7 +76,7 @@
   font-family: Arial, sans-serif;
 }
 
-.design-3#h5v-sticky-ad-close-button {
+.design-3.h5v-sticky-ad-close-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -92,11 +88,11 @@
   border-bottom-left-radius: 0.5rem;
 }
 
-.design-3#h5v-sticky-ad-close-button:hover {
+.design-3.h5v-sticky-ad-close-button:hover {
   background-color: #e74c3c; /* Darker shade on hover */
 }
 
 .h5v-footerAd--hidden {
-  transform: translateY(300%); /* hide the footer */
-  transition: transform 5s ease-in-out;
+  transform: translateY(300%); !important; /* hide the footer, important so we don't need to add this class to every design here */
+  transition: transform 5s ease-in-out !important;
 }
