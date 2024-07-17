@@ -16,3 +16,17 @@ Find the rendered output to test and try for yourself here: https://highfivve.gi
 
 Alternatively, you can check out the repo and fiddle for yourself using a local web server. All files are
 self-contained, no build or dependencies necessary.
+
+## Run locally
+
+Start a local http server in the root directory in this folder. For example
+
+```bash
+npx http-server .
+```
+
+Or you can use a python one with
+
+```bash
+python3 -m http.server 8000
+```
