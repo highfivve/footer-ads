@@ -6,9 +6,13 @@
     "url": "https://highfivve.com"
   },
   "license": "MIT",
+  "main": "index.html",
+  "scripts": {
+    "start": "lite-server"
+  },
   "version": "1.0.0",
-  "dependencies": {},
   "devDependencies": {
+    "lite-server": "^2.6.1",
     "prettier": "^2.3.2"
   }
 }

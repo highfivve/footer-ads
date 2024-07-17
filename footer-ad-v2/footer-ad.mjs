@@ -2,44 +2,12 @@
 export const footerAd = () => {
     if (typeof document !== "undefined") {
         // Select all the DOM elements to manipulate
-        const stickyAdContainer = document.getElementById("h5v-sticky-ad-container")
-        const closeButton = document.getElementById("h5v-sticky-ad-close-button")
-        const closeButtonText = document.getElementById("close-button-text")
-        const design1Button = document.getElementById("d-1")
-        const design2Button = document.getElementById("d-2")
-        const design3Button = document.getElementById("d-3")
-
-        // Use design-1 initially
-        if (stickyAdContainer) {
-            stickyAdContainer.classList.add("design-1")
-        }
-
-        // Apply css properties based on the clicked button
-        design1Button?.addEventListener("click", () => {
-            stickyAdContainer?.classList.add("design-1")
-            stickyAdContainer?.classList.remove("design-2")
-            stickyAdContainer?.classList.remove("design-3")
-            if (closeButtonText) closeButtonText.style.display = "block"
-        })
-
-        design2Button?.addEventListener("click", () => {
-            stickyAdContainer?.classList.remove("design-1")
-            stickyAdContainer?.classList.add("design-2")
-            stickyAdContainer?.classList.remove("design-3")
-            if (closeButtonText) closeButtonText.style.display = "block"
-        })
-
-        design3Button?.addEventListener("click", () => {
-            stickyAdContainer?.classList.remove("design-1")
-            stickyAdContainer?.classList.remove("design-2")
-            stickyAdContainer?.classList.add("design-3")
-            // Show only an arrow
-            if (closeButtonText) closeButtonText.style.display = "none"
-        })
+        const stickyAdContainer = document.getElementsByClassName("h5v-sticky-ad-container")[0];
+        const closeButton = document.getElementsByClassName("h5v-sticky-ad-close-button")[0];
 
         // For testing ads content
         const getRandomAdImage = (adContainer, width, height) => {
-            const image = window.document.createElement("img")
+            const image = document.createElement("img")
             image.src = `https://random.imagecdn.app/${width}/${height}`
             adContainer.appendChild(image)
         }
@@ -58,12 +26,6 @@ export const footerAd = () => {
             }
         })
 
-        const showAd = () => {
-            if (stickyAdContainer) {
-                stickyAdContainer.style.transform = "translateY(0)" // Slide up into the viewport
-            }
-        }
-
         // Differentiating between mobile and desktop viewports
         const adjustAdLayout = () => {
             if (stickyAdContainer) {
@@ -80,6 +42,5 @@ export const footerAd = () => {
 
         // Initial layout adjustment
         adjustAdLayout()
-        showAd() // Show the ad initially
     }
 }
