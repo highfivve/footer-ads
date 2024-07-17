@@ -47,7 +47,7 @@ export const footerAd = () => {
         // Close button behaviour - animate and remove the dom eventually
         closeButton?.addEventListener("click", () => {
             if (stickyAdContainer) {
-                stickyAdContainer.style.transform = "translateY(120%)" // Slide down out of the viewport including the close button
+                stickyAdContainer.classList.add('h5v-footerAd--hidden'); // Slide down out of the viewport including the close button
                 stickyAdContainer.addEventListener(
                     "transitionend",
                     () => {

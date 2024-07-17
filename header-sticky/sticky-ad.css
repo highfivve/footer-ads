@@ -15,7 +15,7 @@
   main {
     /** this reserves enough "space" for the sticky ad.
      *
-     * The padding represents the whitespace where the sticky ad floats on top. 
+     * The padding represents the whitespace where the sticky ad floats on top.
      * It's caluclated based on the height of the navbar, the maximum height of the ad and some extra
      * padding (30px in this case)
      */
