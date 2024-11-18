@@ -10,8 +10,8 @@ export const initAdSticky = () => {
   const targets = document.querySelectorAll(targetSelector);
   const target = targets.length > 0 ? targets.item(0) : null;
 
-  const fadeOutClass = "header-ad--fadeOut";
-  const navbarhiddenClass = "header-ad--navbarHidden";
+  const fadeOutClass = "h5v-header-ad--fadeOut";
+  const navbarhiddenClass = "h5v-header-ad--navbarHidden";
   const headerAd = document.querySelector('[data-ref="header-ad"]');
 
   const observer = new IntersectionObserver(
