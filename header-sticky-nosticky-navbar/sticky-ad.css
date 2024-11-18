@@ -26,11 +26,11 @@
 /** styles the container for the actual ad. You may name this CSS class as you wish */
 .h5v-header-ad {
   /** background is required for sticky ads */
-  background-color: var(--header-ad-bg);
+  background-color: var(--h5v-header-ad-bg);
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: var(--header-ad-height);
+  min-height: var(--h5v-header-ad-height);
   width: 100%;
 }
 
