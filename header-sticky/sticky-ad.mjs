@@ -5,7 +5,7 @@
  */
 export const initAdSticky = () => {
   const targetSelector = "#h5v_content_1";
-  const fadeOutClass = "header-ad--fadeOut";
+  const fadeOutClass = "h5v-header-ad--fadeOut";
   const headerAd = document.querySelector('[data-ref="header-ad"]');
   const observer = new IntersectionObserver(
     (entries) => {

@@ -3,7 +3,7 @@
   /** set this to none if you don't want a close button */
   --header-ad-close-button: block;
   --header-ad-bg: #fff;
-   /** depending on your ad layout this may range from 50px to 250px */
+  /** depending on your ad layout this may range from 50px to 250px */
   --header-ad-height: 100px;
   --header-ad-border: 1px solid rgb(243, 244, 246);
   --header-ad-shadow: 0 0 #0000, 0 0 #0000,
@@ -24,7 +24,7 @@
 }
 
 /** styles the container for the actual ad. You may name this CSS class as you wish */
-.header-ad {
+.h5v-header-ad {
   /** background is required for sticky ads */
   background-color: var(--header-ad-bg);
   display: flex;
@@ -36,7 +36,7 @@
 
 @media (max-width: 767px) {
 
-  .header-ad {
+  .h5v-header-ad {
     /** you may change the style according to your needs */
     border-bottom: var(--header-ad-border);
     box-shadow: var(--header-ad-shadow);
@@ -52,17 +52,15 @@
   /** if this classname doesn't fit your css rules, you can propose a separate name, which
    * must be configured in your ad tag.
    */
-  .header-ad--fadeOut {
+  .h5v-header-ad--fadeOut {
     /** this is the hiding animiation */
-    transform: translateY(
-      calc(-1 * (var(--navbar-height) + var(--header-ad-height) + 50px))
-    );
+    transform: translateY(calc(-1 * (var(--navbar-height) + var(--header-ad-height) + 50px)));
   }
 
   /** this an example on how the close button may look like.
    * if you don't want a close button, this is optional.
    */
-  .header-ad--button {
+  .h5v-header-ad--button {
     background-color: var(--header-ad-bg);
     bottom: -25px;
     border-bottom: var(--header-ad-border);
@@ -80,11 +78,12 @@
 
 /** on desktop the ad is not sticky and placed in the regular layout flow */
 @media (min-width: 768px) {
-  .header-ad {
+  .h5v-header-ad {
     min-height: 250px;
     padding-top: var(--navbar-height);
   }
-  .header-ad--button {
+
+  .h5v-header-ad--button {
     display: none;
   }
 }

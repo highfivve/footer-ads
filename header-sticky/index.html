@@ -34,9 +34,9 @@
     <header class="sticky-nav">this is a sticky navbar</header>
 
     <!-- sticky header ad -->
-    <div class="header-ad" data-ref="header-ad">
+    <div class="h5v-header-ad" data-ref="header-ad">
       <div id="h5v_header">HEADER AD SLOT</div>
-      <button class="header-ad--button" data-ref="header-ad-close-button">
+      <button class="h5v-header-ad--button" data-ref="header-ad-close-button">
         Close
       </button>
     </div>
@@ -53,12 +53,12 @@
       <p class="my-2">
         The header ad has a few configuration parameters that you can tweak.
         <ul class="list-disc pl-8">
-          <li class="mb-1">CSS variables: The <code>sticky-ad.css</code> file contains some variables that may need adjustments according to your ad layout. The <code>--header-ad-height</code> may be 250px or only 50px. The <code>--navbar-height</code> may differ for your layout.</li>
+          <li class="mb-1">CSS variables: The <code>sticky-ad.css</code> file contains some variables that may need adjustments according to your ad layout. The <code>--h5v-header-ad-height</code> may be 250px or only 50px. The <code>--h5v-navbar-height</code> may differ for your layout.</li>
           <li class="mb-1">
-            The <code>--header-ad-close-button</code> can be set to <code>none</code> if you don't want a close button or you can remove the <code>button</code> tag entirely.
+            The <code>--h5v-header-ad-close-button</code> can be set to <code>none</code> if you don't want a close button or you can remove the <code>button</code> tag entirely.
           </li>
           <li class="mb-1">
-            The <code>fadeOutClassname</code>. By default we use <code>header-ad--fadeOut</code>. This class gets applied, when the slot should fade out.
+            The <code>fadeOutClassname</code>. By default we use <code>h5v-header-ad--fadeOut</code>. This class gets applied, when the slot should fade out.
           </li>
           <li class="mb-1">
             The <code>selector</code> for the DOM node that should be observed for visibility, which triggers the header ad fade out. We recommend using the first content position. You can however turn this feature off and the sticky header will always be visible. We only recommend this if you have no mobile sticky ad on your page.
